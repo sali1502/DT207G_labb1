@@ -10,23 +10,13 @@
     display: grid;
     grid-template-columns: 2fr;
     grid-gap: 0px;
-    max-width: 500px;
+    max-width: 800px;
     min-width: 375px;
     height: 100%;
     width: 100%;
     background-color: rgb(255, 255, 255);
     margin: 0 auto 0 auto;
     border-radius: 30px;
-}
-
-body {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 100%;
-    font-size: 0.7em;
-    color:rgb(0, 0, 0);
-    background-color:rgb(0, 105, 79);
-    text-align: center;
-    margin: 0 auto 0 auto;
 }
 
 .menu-container {
@@ -36,19 +26,46 @@ body {
     margin-bottom: 5vh;
 }
 
+.form-container {
+    width: 100%;
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+}
+
+.text-container {
+    text-align: center;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    font-size: 0.7em;
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 105, 79);
+    text-align: center;
+    margin: 0 auto 0 auto;
+}
+
 h1 {
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2em;
-    line-height: 1em;
-    color:rgb(0, 105, 79);
+    color: rgb(0, 105, 79);
     text-align: center;
 }
 
-table, th, td {
+table,
+th,
+td {
     padding: 5px;
     margin: 0 auto 0 auto;
     margin-bottom: 2vh;
-    margin-top: 4vh;
+    margin-top: 2vh;
 }
 
 th {
@@ -60,17 +77,20 @@ thead {
     text-align: left;
 }
 
-button {
-    background-color:rgb(161, 65, 65);
+.button {
+    background-color: rgb(161, 65, 65);
     color: white;
+    margin-top: 0.5vh;
     border-radius: 30px;
-    padding-right: 5px;
-    padding-left: 5px;
-    font-size: 0.8em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: 1em;
 }
 
 a {
-    color:rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
 }
 
 nav a {
@@ -96,34 +116,31 @@ li a {
 }
 
 .active {
-    background-color:rgb(0, 105, 79);
+    background-color: rgb(0, 105, 79);
     color: white;
 }
 
 p {
     margin-top: 2vh;
-    margin-left: 5vw;
-    margin-right: 5vw;
-    margin-bottom: 4vh;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 0.9em;
-    line-height: 1.5em;
-    color:rgb(0, 0, 0);
-    background-color:rgb(255, 255, 255);
-    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.8em;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
 }
 
 input[type=text] {
-    width: 80%;
+    width: 60%;
     padding: 5px;
     border-radius: 4px;
     margin-top: 0.5vh;
     margin-bottom: 1vh;
 }
 
-.form-container {
-    width: 100%;
-    margin-top: 2vh;
-    margin-bottom: 4vh;
+.error {
+    color: red;
+    font-weight: bold;
+    line-height: 6em;
 }
+
 

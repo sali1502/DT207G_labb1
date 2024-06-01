@@ -32,6 +32,9 @@
 
             <div class="form-container">
                 <form method="post">
+                    <% if(error !=="") { %>
+                        <p class="error"><%=error %></p>
+                    <% } %>
                     <label for="coursecode">Kurskod:</label>
                     <br>
                     <input type="text" id="coursecode" name="coursecode">
@@ -48,7 +51,7 @@
                     <br>
                     <input type="text" id="syllabus" name="syllabus">
                     <br>
-                    <input type ="submit" value="Lägg till kurs">
+                    <input type ="submit" value="Lägg till kurs" class="button">
                 </form>
             </div>
         </main>

@@ -12,18 +12,41 @@ const app = express();
 const port = 3000;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-app.use(bodyParser.urlencoded({ extended : true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routing
 app.get("/", (req, res) => {
-    res.render("index", {
-        title: "Startsida"
+    res.render("index", {                  
+        title: "Startsida",
     });
 });
 
 app.get("/addcourse", (req, res) => {
-    res.render("addcourse");
+    res.render("addcourse", {
+        error: ""
+    });
 });
+
+// Skapa nytt inlägg
+app.post("/addcourse", (req, res) => {
+    let coursecode = req.body.coursecode;
+    let coursename = req.body.coursename;
+    let progression = req.body.progression;
+    let syllabus = req.body.syllabus;
+    let error = "";
+
+    // Kontrollera input
+    if (coursecode !=="" && coursename !=="" && progression !=="" && syllabus !=="") {
+
+    } else {
+        error = "Du måste fylla i alla fält i formuläret!";
+    }
+
+    res.render("addcourse", {
+        error: error
+    });
+});
+
 
 app.get("/changecourse", (req, res) => {
     res.render("changecourse");
