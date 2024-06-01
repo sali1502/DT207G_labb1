@@ -14,7 +14,6 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended : true}));
 
-
 // Routing
 app.get("/", (req, res) => {
     res.render("index", {
@@ -35,7 +34,7 @@ app.get("/about", (req, res) => {
     });
 });
 
-// Starta applikation
+// Starta applikationen
 app.listen(port, () => {
     console.log("server started on port " + port);
 });
