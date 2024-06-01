@@ -1,11 +1,11 @@
-/* Install-script för labb 1, DT207G Backend-baserad webbutveckling. Åsa Lindskog, sali1502@student.miun.se */
+/* Install-script labb 1, DT207G. Åsa Lindskog, sali1502@student.miun.se */
 
 const sqlite3 = require("sqlite3").verbose();
 
-//Skapa databas
+// Skapa databas
 const db = new sqlite3.Database("./db/courses.db");
 
-//Skapa tabell (id, coursecode, coursename, syllabus, progression)
+// Skapa tabell (id, coursecode, coursename, syllabus, progression)
 db.serialize(() => {
     db.run("DROP TABLE IF EXISTS courses;");
     db.run(`
