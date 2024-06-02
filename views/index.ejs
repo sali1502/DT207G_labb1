@@ -50,12 +50,16 @@
                                     <td>
                                         <%= row.coursecode %>
                                     </td>
-                                    <td><%= row.coursename %></td>
-                                    <td><%= row.progression %></td>
-                                    <td><a href = "<%= row.syllabus %>">Kursinfo</a>
+                                    <td>
+                                        <%= row.coursename %>
                                     </td>
-                                    <td><button type="button" class="button">Ändra</button>
-                                        <button type="button" class="button">Radera</button>
+                                    <td>
+                                        <%= row.progression %>
+                                    </td>
+                                    <td><a href="<%= row.syllabus %>">Kursinfo</a>
+                                    </td>
+                                    <td><a href="/changecourse" class="tdBtn">Ändra</a>
+                                        <a href="/delete/<%= row.id %>" class="tdBtn">Radera</a>
                                     </td>
                                 </tr>
                             </tbody>

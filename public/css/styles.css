@@ -98,6 +98,21 @@ nav a {
     text-decoration: none;
 }
 
+.tdBtn {
+    background-color: rgb(161, 65, 65);
+    color: white;
+    margin-top: 0.5vh;
+    border-radius: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: 0.8em;
+    line-height: 2em;
+    text-decoration: none;
+    border: solid black 1px;
+}
+
 ul {
     list-style-type: none;
     margin: 0 auto;

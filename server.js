@@ -38,7 +38,6 @@ app.get("/addcourse", (req, res) => {
     });
 });
 
-
 // Skapa nytt inlägg
 app.post("/addcourse", (req, res) => {
     let coursecode = req.body.coursecode;
@@ -49,7 +48,7 @@ app.post("/addcourse", (req, res) => {
 
     // Kontrollera input
     if (coursecode !== "" && coursename !== "" && progression !== "" && syllabus !== "") {
-        
+
         // Korrekt - Lagra i db
         const stmt = db.prepare("INSERT INTO courses(coursecode, coursename, progression, syllabus)VALUES(?,?,?,?);");
         stmt.run(coursecode, coursename, progression, syllabus);
@@ -63,13 +62,25 @@ app.post("/addcourse", (req, res) => {
     });
 });
 
-
 app.get("/changecourse", (req, res) => {
     res.render("changecourse");
 });
 
 app.get("/about", (req, res) => {
     res.render("about", {
+    });
+});
+
+app.get("/delete/:id", (req, res) => {
+    let id = req.params.id;
+
+    // Radera inlägg
+    db.run("DELETE FROM courses WHERE id=?;", id, (err) => {
+        if (err) {
+            console.error(err.message);
+        }
+        // Redirect till startsidan
+        res.redirect("/");
     });
 });
 
