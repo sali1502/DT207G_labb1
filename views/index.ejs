@@ -18,7 +18,6 @@
                     <ul>
                         <li><a href="/" class="active">Mina kurser</a></li>
                         <li><a href="/addcourse">Lägg till kurs</a></li>
-                        <li><a href="/changecourse">Ändra kurs</a></li>
                         <li><a href="/about">Om sidan</a></li>
                     </ul>
                 </nav>
@@ -29,7 +28,7 @@
 
             <h1>Mina kurser</h1>
 
-            <!--Tabell med statisk data-->
+            <!--Rubriker med statisk data-->
             <div class="table-container">
                 <table>
                     <thead>
@@ -42,7 +41,7 @@
                         </tr>
                     </thead>
 
-                    <!--- Utskrift från databas -->
+                    <!--- Utskrift av kurser från databas -->
                     <% if(locals.rows.length> 0) { %>
                         <% locals.rows.forEach((row)=> { %>
                             <tbody>
@@ -58,7 +57,7 @@
                                     </td>
                                     <td><a href="<%= row.syllabus %>">Kursinfo</a>
                                     </td>
-                                    <td><a href="/changecourse" class="tdBtn">Ändra</a>
+                                    <td>
                                         <a href="/delete/<%= row.id %>" class="tdBtn">Radera</a>
                                     </td>
                                 </tr>

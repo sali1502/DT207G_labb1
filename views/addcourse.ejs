@@ -19,7 +19,6 @@
                     <ul>
                         <li><a href="/">Mina kurser</a></li>
                         <li><a href="/addcourse" class="active">Lägg till kurs</a></li>
-                        <li><a href="/changecourse">Ändra kurs</a></li>
                         <li><a href="/about">Om sidan</a></li>
                     </ul>
                 </nav>
@@ -31,7 +30,8 @@
             <h1>Lägg till kurs</h1>
 
             <div class="form-container">
-                <form method="post">
+                <form method="post">                
+                    <!-- Kontroll av korrekt ifyllt formulär -->
                     <% if(error !=="" ) { %>
                         <p class="error">
                             <%=error %>

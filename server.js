@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routing
 app.get("/", (req, res) => {
-    // Läs ut befintlig data från databasen
+
+    // Läs ut befintliga kurser
     db.all("SELECT * FROM courses;",
         (err, rows) => {
             if (err) {
@@ -28,7 +29,6 @@ app.get("/", (req, res) => {
                 error: "",
                 rows: rows
             });
-
         });
 });
 
@@ -38,7 +38,7 @@ app.get("/addcourse", (req, res) => {
     });
 });
 
-// Skapa nytt inlägg
+// Lägg till kurser
 app.post("/addcourse", (req, res) => {
     let coursecode = req.body.coursecode;
     let coursename = req.body.coursename;
@@ -62,10 +62,6 @@ app.post("/addcourse", (req, res) => {
     });
 });
 
-app.get("/changecourse", (req, res) => {
-    res.render("changecourse");
-});
-
 app.get("/about", (req, res) => {
     res.render("about", {
     });
@@ -74,7 +70,7 @@ app.get("/about", (req, res) => {
 app.get("/delete/:id", (req, res) => {
     let id = req.params.id;
 
-    // Radera inlägg
+    // Radera kurser
     db.run("DELETE FROM courses WHERE id=?;", id, (err) => {
         if (err) {
             console.error(err.message);
