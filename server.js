@@ -16,16 +16,28 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routing
 app.get("/", (req, res) => {
-    res.render("index", {                  
-        title: "Startsida",
-    });
+    // Läs ut befintlig data från databasen
+    db.all("SELECT * FROM courses;",
+        (err, rows) => {
+            if (err) {
+                console.error(err.message);
+            }
+
+            res.render("index", {
+                title: "Startsida",
+                error: "",
+                rows: rows
+            });
+
+        });
 });
 
 app.get("/addcourse", (req, res) => {
     res.render("addcourse", {
-        error: ""
+        error: "",
     });
 });
+
 
 // Skapa nytt inlägg
 app.post("/addcourse", (req, res) => {
@@ -36,7 +48,8 @@ app.post("/addcourse", (req, res) => {
     let error = "";
 
     // Kontrollera input
-    if (coursecode !=="" && coursename !=="" && progression !=="" && syllabus !=="") {
+    if (coursecode !== "" && coursename !== "" && progression !== "" && syllabus !== "") {
+        
         // Korrekt - Lagra i db
         const stmt = db.prepare("INSERT INTO courses(coursecode, coursename, progression, syllabus)VALUES(?,?,?,?);");
         stmt.run(coursecode, coursename, progression, syllabus);

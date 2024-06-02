@@ -42,21 +42,26 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>DT207G</td>
-                            <td>Backend-baserad webbutveckling</td>
-                            <td>B</td>
-                            <td><a target="_blank"
-                                    href="https://www.miun.se/utbildning/kursplaner-och-utbildningsplaner/DT207G/">Beskrivning</a>
-                            </td>
-                            <td><button type="button" class="button">Ändra</button>
-                                <button type="button" class="button">Radera</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <!--- Utskrift från databas -->
+                    <% if(locals.rows.length> 0) { %>
+                        <% locals.rows.forEach((row)=> { %>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <%= row.coursecode %>
+                                    </td>
+                                    <td><%= row.coursename %></td>
+                                    <td><%= row.progression %></td>
+                                    <td><a href = "<%= row.syllabus %>">Kursinfo</a>
+                                    </td>
+                                    <td><button type="button" class="button">Ändra</button>
+                                        <button type="button" class="button">Radera</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <% }); %>
+                                <% } %>
                 </table>
-            </div>
         </main>
     </div>
 </body>
