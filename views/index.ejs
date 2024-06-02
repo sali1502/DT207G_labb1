@@ -41,7 +41,7 @@
                         </tr>
                     </thead>
 
-                    <!--- Utskrift av kurser från databas -->
+                    <!--- Utskrift med dynamisk data från databas -->
                     <% if(locals.rows.length> 0) { %>
                         <% locals.rows.forEach((row)=> { %>
                             <tbody>
@@ -65,6 +65,7 @@
                             <% }); %>
                                 <% } %>
                 </table>
+            </div>
         </main>
     </div>
 </body>
