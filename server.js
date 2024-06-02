@@ -37,7 +37,10 @@ app.post("/addcourse", (req, res) => {
 
     // Kontrollera input
     if (coursecode !=="" && coursename !=="" && progression !=="" && syllabus !=="") {
-
+        // Korrekt - Lagra i db
+        const stmt = db.prepare("INSERT INTO courses(coursecode, coursename, progression, syllabus)VALUES(?,?,?,?);");
+        stmt.run(coursecode, coursename, progression, syllabus);
+        stmt.finalize();
     } else {
         error = "Du måste fylla i alla fält i formuläret!";
     }
